@@ -38,7 +38,6 @@ RosssGoose
 GraylagGoose
 SwanGoose
 Brant
-Brant(Black)
 BarnacleGoose
 CacklingGoose
 CanadaGoose
@@ -978,7 +977,6 @@ LizardBuzzard
 AfricanGoshawk
 Besra
 Shikra
-Shikra(Asian)
 GrayGoshawk
 PiedGoshawk
 FijiGoshawk
@@ -1002,7 +1000,6 @@ PallidHarrier
 PiedHarrier
 TinyHawk
 RedKite
-RedKite(Red)
 BlackKite
 BrahminyKite
 WhistlingKite
@@ -1093,7 +1090,6 @@ CinereousOwl
 FulvousOwl
 ChacoOwl
 UralOwl
-UralOwl(Ural)
 GreatGrayOwl
 JamaicanOwl
 LongearedOwl
@@ -1261,9 +1257,6 @@ BandedKestrel
 AmurFalcon
 SootyFalcon
 Merlin
-Merlin(Pallid)
-Merlin(Taiga)
-Merlin(Black)
 EurasianHobby
 AfricanHobby
 OrientalHobby
@@ -1644,7 +1637,6 @@ Pilotbird
 Redthroat
 ShyHeathwren
 Weebill
-Weebill(Brown)
 Rockwarbler
 LargeScrubwren
 Scrubtit
@@ -1942,8 +1934,6 @@ MarianaCrow
 GrayCrow
 CapeCrow
 Rook
-Rook(Western)
-Rook(Eastern)
 AmericanCrow
 CubanPalmCrow
 CubanCrow

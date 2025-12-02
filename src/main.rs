@@ -75,7 +75,7 @@ fn extract_csv_to_txt() -> anyhow::Result<()> {
     let mut count = 0;
     for name_opt in english_names {
         if let Some(name) = name_opt {
-            if name.len() < 3 || name.len() > 15 {
+            if name.len() < 3 || name.len() > 15 || name.contains("(") {
                 continue;
             }
 
