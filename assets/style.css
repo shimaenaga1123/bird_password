@@ -1,0 +1,97 @@
+/* Modern CSS Reset & Variables */
+:root {
+	--primary-color: #0ea5e9;
+	--primary-hover: #0284c7;
+	--bg-color: #f8fafc;
+	--card-bg: #ffffff;
+	--text-main: #334155;
+	--text-muted: #64748b;
+	--success-bg: #f0fdf4;
+	--success-text: #166534;
+	--error-bg: #fef2f2;
+	--error-text: #b91c1c;
+	--font-sans: system-ui, -apple-system, sans-serif;
+	--font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+	--radius: 12px;
+	--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--font-sans);
+	background-color: var(--bg-color);
+	color: var(--text-main);
+	line-height: 1.5;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Main Container Card */
+.container {
+	background-color: var(--card-bg);
+	padding: 2.5rem;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	width: 100%;
+	max-width: 480px;
+	text-align: center;
+	margin: 1rem;
+}
+
+/* Typography */
+h1 {
+	font-size: 1.875rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--text-main);
+	letter-spacing: -0.025em;
+}
+
+/* Button Styling */
+button {
+	background-color: var(--primary-color);
+	color: white;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-radius: var(--radius);
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		transform 0.1s ease;
+	width: 100%;
+}
+
+button:hover {
+	background-color: var(--primary-hover);
+}
+
+button:active {
+	transform: scale(0.98);
+}
+
+/* Result Area */
+.result {
+	margin-top: 2rem;
+	min-height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Password Display */
+.password {
+	font-family: var(--font-mono);
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--success-text);
+	background-color: var(--success-bg);
+}
