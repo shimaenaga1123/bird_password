@@ -1,7 +1,7 @@
-FROM rust:slim-trixie AS builder
+FROM rust:alpine AS builder
 
-RUN apt-get update && apt-get install -y --no-install-recommends mold wget \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache mold wget \
+    && rm -rf /var/cache/apk/*
 
 RUN wget https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 RUN tar -xvf cargo-binstall-x86_64-unknown-linux-musl.tgz
@@ -20,7 +20,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cp target/release/bird_password /app/ && \
     cp -r target/site /app/site
 
-FROM debian:trixie-slim
+FROM alpine:latest
 
 WORKDIR /app
 
