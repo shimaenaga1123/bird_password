@@ -1,11 +1,11 @@
 FROM rust:alpine AS builder
 
-RUN apk add --no-cache mold wget \
+ARG TARGETARCH
+
+RUN apk add --no-cache curl mold \
     && rm -rf /var/cache/apk/*
 
-RUN wget https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
-RUN tar -xvf cargo-binstall-x86_64-unknown-linux-musl.tgz
-RUN cp cargo-binstall /usr/local/cargo/bin
+RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | sh
 
 RUN cargo binstall cargo-leptos -y
 
@@ -20,7 +20,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cp target/release/bird_password /app/ && \
     cp -r target/site /app/site
 
-FROM alpine:latest
+FROM scratch
 
 WORKDIR /app
 
@@ -34,4 +34,4 @@ ENV LEPTOS_SITE_ROOT="target/site"
 
 EXPOSE 8080
 
-CMD ["./bird_password"]
+ENTRYPOINT ["/app/bird_password"]
